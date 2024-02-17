@@ -1,8 +1,18 @@
-function App() {
+import {Route, Routes} from "react-router-dom";
+import Home from "./components/home/Home.jsx";
+import Demo from "./components/demo/Demo.jsx";
+import HomeHeader from "./components/home/HomeHeader.jsx";
+import DemoHeader from "./components/demo/DemoHeader.jsx";
 
+function App() {
+  const auth = false; // temporary authentication
   return (
     <>
-      <h1 className={`text-red-500`}>Hello World</h1>
+      {auth ? <HomeHeader /> : <DemoHeader />}
+      <Routes>
+        <Route path={`/`} element={<Home />} />
+        <Route path={`/Demo`} element={<Demo />} />
+      </Routes>
     </>
   )
 }
