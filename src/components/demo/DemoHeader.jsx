@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { nav } from "../../data.js";
 import Logo from '../../assets/medium-logo.png'
 import { Link } from "react-router-dom";
+import Auth from "./auth/Auth.jsx";
 
 const DemoHeader = () => {
   const [isActive, setIsActive] = useState(false);
@@ -44,6 +45,7 @@ const DemoHeader = () => {
             ))}
           </div>
           <button className={style.btn_sign_in} aria-label={`Sign In`}>Sign In</button>
+          <Auth />
           <button className={style.btn_get_started} aria-label={`Get Started`}>Get Started</button>
         </nav>
 
