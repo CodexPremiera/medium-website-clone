@@ -6,6 +6,7 @@ import Auth from "./auth/Auth.jsx";
 
 const DemoHeader = () => {
   const [isActive, setIsActive] = useState(false);
+  const [modal, setModal] = useState(false);
 
   /**
    * Listen to scrolling and activate when scrolled down enough. Apply color changes to `header wrapper`
@@ -44,9 +45,17 @@ const DemoHeader = () => {
               <Link key={index} to={link.path} aria-label={link.title}>{link.title}</Link>
             ))}
           </div>
-          <button className={style.btn_sign_in} aria-label={`Sign In`}>Sign In</button>
-          <Auth />
-          <button className={style.btn_get_started} aria-label={`Get Started`}>Get Started</button>
+          <button className={style.btn_sign_in}
+                  onClick={() => setModal(true)}
+                  aria-label={`Sign In`}>
+            Sign In
+          </button>
+          <Auth modal={modal} setModal={setModal} />
+          <button className={style.btn_get_started}
+                  onClick={() => setModal(true)}
+                  aria-label={`Get Started`}>
+            Get Started
+          </button>
         </nav>
 
       </div>

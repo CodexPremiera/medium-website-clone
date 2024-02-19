@@ -7,10 +7,10 @@ import Input from "../../utils/Input";
 const SignUp = ({setSignReq}) => {
   const style = {
     container: `size text-center`,
-    h2: `text-3xl`,
+    h2: `text-3xl font-title`,
     subtitle: `max-w-[54ch] mx-auto py-[3rem]`,
     form: `flex flex-col gap-4`,
-    btn_sign_up: `px-6 py-2 mt-1 text-sm rounded-full bg-green-700 hover:bg-green-800 text-white w-fit mx-auto`,
+    btn_continue: `flex grow w-[10rem] justify-center px-6 py-2 mt-4 mx-auto text-sm rounded-full bg-gray-900 hover:bg-gray-950 text-white`,
     btn_go_back: `mt-5 text-sm text-green-600 hover:text-green-700 flex items-center mx-auto`
   }
 
@@ -26,8 +26,8 @@ const SignUp = ({setSignReq}) => {
         <Input type="email" title="email"/>
         <Input type="password" title="password"/>
 
-        <button className={style.btn_sign_up}>
-          Sign Up
+        <button className={style.btn_continue}>
+          Continue
         </button>
       </form>
 
