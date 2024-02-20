@@ -17,9 +17,9 @@ const Auth = ({modal, setModal}) => {
   const hidden = modal ? "visible opacity-100" : "invisible opacity-0";
 
   const style = {
-    wrapper: `z-50 fixed overflow-auto grid place-items-center mx-auto w-fit h-full top-0 left-0 bg-transparent
-             ${hidden} transition-all duration-500`,
-    container: `z-100 relative bg-white py-[4rem] px-[3rem] max-sm:w-full max-sm:h-full sm:flex-1 `,
+    container: `z-50 fixed overflow-auto bg-white py-[4rem] px-[3rem] sm:rounded-xl shadows 
+                w-full h-full md:w-[640px] md:h-fit top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] 
+                ${hidden} transition-all duration-500`,
     btn_exit: `absolute top-[2rem] right-[2rem] text-2xl hover:opacity-50`,
     content: `flex flex-col justify-center items-center gap-[3rem]`,
     h2: `text-2xl font-title`,
@@ -31,10 +31,7 @@ const Auth = ({modal, setModal}) => {
 
   return (
     <Modal modal={modal} setModal={setModal} hidden={hidden}>
-      <div className={`z-50 fixed overflow-auto w-full h-full md:w-[640px] md:h-fit 
-                    top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] 
-                    bg-white py-[4rem] px-[3rem] sm:rounded-xl shadows
-                    ${hidden} transition-all duration-500`}>
+      <div className={style.container}>
         <button
           onClick={() => setModal(false)}
           className={style.btn_exit}>

@@ -1,17 +1,22 @@
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import Home from "./components/home/Home.jsx";
 import Demo from "./components/demo/Demo.jsx";
 import HomeHeader from "./components/home/HomeHeader.jsx";
 import DemoHeader from "./components/demo/DemoHeader.jsx";
 
 function App() {
-  const auth = false; // temporary authentication
+  const currentUser = false;
   return (
     <>
-      {auth ? <HomeHeader /> : <DemoHeader />}
+      {currentUser ? <HomeHeader /> : <DemoHeader />}
+
       <Routes>
-        <Route path={`/`} element={<Home />} />
-        <Route path={`/Demo`} element={<Demo />} />
+        {currentUser && <Route path={`/`} element={<Home/>} />}
+        {!currentUser && <Route path={`/Demo`} element={<Demo/>} />}
+        <Route
+          path={`*`}
+          element={ <Navigate to={ currentUser ? `/` : `/demo`} /> }
+        />
       </Routes>
     </>
   )

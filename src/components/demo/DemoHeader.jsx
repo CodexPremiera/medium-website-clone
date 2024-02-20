@@ -26,7 +26,7 @@ const DemoHeader = () => {
     nav_menu: `flex items-center gap-5`,
     nav_list: `hidden text-sm sm:flex items-center gap-5`,
     btn_sign_in: `hidden text-sm sm:flex items-center gap-5`,
-    btn_get_started: `text-white rounded-full px-3 py-2 text-sm font-medium ${isActive ? "bg-green-700" : "bg-black"}`
+    btn_get_started: `btn-black ${isActive ? "bg-green-700" : "bg-black"}`
   }
 
   return (

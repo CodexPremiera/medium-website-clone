@@ -11,5 +11,9 @@
 }
 
 .shadows {
-  box-shadow: 0 0 3px 0 rgb(182, 182, 182);
+  box-shadow: 0 0 4px 1px rgb(182, 182, 182);
+}
+
+.btn-black {
+  @apply text-white rounded-full px-6 py-2 text-sm font-medium bg-black;
 }
