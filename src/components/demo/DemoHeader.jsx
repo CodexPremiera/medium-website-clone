@@ -6,6 +6,7 @@ import Auth from "./auth/Auth.jsx";
 
 const DemoHeader = () => {
   const [isActive, setIsActive] = useState(false);
+  const [createUser, setCreateUser] = useState(false);
   const [modal, setModal] = useState(false);
 
   /**
@@ -26,7 +27,7 @@ const DemoHeader = () => {
     nav_menu: `flex items-center gap-5`,
     nav_list: `hidden text-sm sm:flex items-center gap-5`,
     btn_sign_in: `hidden text-sm sm:flex items-center gap-5`,
-    btn_get_started: `btn-black ${isActive ? "bg-green-700" : "bg-black"}`
+    btn_get_started: `btn-black ${isActive ? "!bg-green-700" : "!bg-black"} transition-all duration-500`
   }
 
   return (
@@ -45,14 +46,23 @@ const DemoHeader = () => {
               <Link key={index} to={link.path} aria-label={link.title}>{link.title}</Link>
             ))}
           </div>
+
           <button className={style.btn_sign_in}
-                  onClick={() => setModal(true)}
+                  onClick={() => {
+                    setModal(true);
+                    setCreateUser(false);
+                  }}
                   aria-label={`Sign In`}>
             Sign In
           </button>
-          <Auth modal={modal} setModal={setModal} />
+
+          <Auth modal={modal} setModal={setModal} createUser={createUser} setCreateUser={setCreateUser} />
+
           <button className={style.btn_get_started}
-                  onClick={() => setModal(true)}
+                  onClick={() => {
+                    setModal(true);
+                    setCreateUser(true);
+                  }}
                   aria-label={`Get Started`}>
             Get Started
           </button>

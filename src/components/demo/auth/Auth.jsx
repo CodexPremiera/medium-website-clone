@@ -10,8 +10,8 @@ import SignIn from "./SignIn.jsx";
 import SignUp from "./SignUp.jsx";
 
 
-const Auth = ({modal, setModal}) => {
-  const [createUser, setCreateUser] = useState(false);
+const Auth = ({modal, setModal, createUser, setCreateUser}) => {
+  //const [createUser, setCreateUser] = useState(false);
   const [signReq, setSignReq] = useState("");
 
   const hidden = modal ? "visible opacity-100" : "invisible opacity-0";

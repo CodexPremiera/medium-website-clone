@@ -1,62 +1,10 @@
 import React from 'react'
+import Banner from "./Banner.jsx";
 
 const Demo = () => {
   return (
     <>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
-      <div>Demo</div>
+      <Banner />
     </>
   )
 }
