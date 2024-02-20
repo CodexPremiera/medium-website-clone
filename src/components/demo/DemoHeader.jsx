@@ -15,7 +15,7 @@ const DemoHeader = () => {
    * */
   useEffect(() => {
     const scrollTripwire = () => {
-      window.scrollY > 240 ? setIsActive(true) : setIsActive(false);
+      window.scrollY > 480 ? setIsActive(true) : setIsActive(false);
     }
     window.addEventListener("scroll", scrollTripwire);
   }, []);
