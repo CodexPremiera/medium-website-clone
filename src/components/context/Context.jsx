@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {createContext, useContext, useState} from 'react';
 
-function Context(props) {
+const BlogContext = createContext();
+
+const Context = ({children}) => {
+  const [currentUser, setCurrentUser] = useState(false);
   return (
-    <div></div>
+    <BlogContext.Provider value={{ currentUser, setCurrentUser }}>
+      {children}
+    </BlogContext.Provider>
   );
 }
 
 export default Context;
+export const Blog = () => useContext(BlogContext);

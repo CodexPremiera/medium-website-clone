@@ -3,9 +3,10 @@ import Home from "./components/home/Home.jsx";
 import Demo from "./components/demo/Demo.jsx";
 import HomeHeader from "./components/home/HomeHeader.jsx";
 import DemoHeader from "./components/demo/DemoHeader.jsx";
+import {Blog} from "./components/context/Context.jsx";
 
 function App() {
-  const currentUser = false;
+  const currentUser = Blog();
   return (
     <>
       {currentUser ? <HomeHeader /> : <DemoHeader />}
