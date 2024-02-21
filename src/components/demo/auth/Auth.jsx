@@ -110,10 +110,10 @@ const Auth = ({modal, setModal, createUser, setCreateUser}) => {
             </>
 
           ) : signReq === "sign-in" ? (
-            <SignIn setSignReq={setSignReq}/>
+            <SignIn setModal={setModal} setSignReq={setSignReq}/>
 
           ) : signReq === "sign-up" ? (
-            <SignUp setSignReq={setSignReq}/>
+            <SignUp setModal={setModal} setSignReq={setSignReq}/>
 
           ) : null}
           <p className={style.disclaimer}>

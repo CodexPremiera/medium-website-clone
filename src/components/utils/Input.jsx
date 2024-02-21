@@ -1,6 +1,9 @@
 import React from "react";
 
-const Input = ({ type, title }) => {
+const Input = ({ type, title, form, setForm }) => {
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
   return (
     <div className="flex flex-col gap- max-w-[64ch]">
       <input
@@ -8,6 +11,7 @@ const Input = ({ type, title }) => {
         type={type}
         name={title}
         placeholder={`${title}`}
+        onChange={handleChange}
       />
     </div>
   );

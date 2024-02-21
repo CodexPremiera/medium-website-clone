@@ -1,16 +1,72 @@
-import React from 'react';
+import React, { useState } from "react";
+
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, database } from "../../../firebase/firebase";
+import { useNavigate } from "react-router-dom";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 import {MdKeyboardArrowLeft as GoBackArrow} from "react-icons/md";
 import Input from "../../utils/Input";
 
 
-const SignUp = ({setSignReq}) => {
+const SignUp = ({ setSignReq, setModal }) => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+    rePassword: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Check if all fields are entered
+    if (form[("username", "email", "password", "rePassword")] === "") {
+      console.log("All fields are required");
+      return;
+    }
+
+    // Check if password matches rePassword
+    if (form["password"] !== form["rePassword"]) {
+      console.log("Your passwords are not matching!!");
+      return;
+    }
+
+    setLoading(true);
+    const { user } = await createUserWithEmailAndPassword (
+      auth,
+      form.email,
+      form.password
+    );
+
+    const ref = doc(database, "users", user.uid);
+    const userDoc = await getDoc(ref);
+
+    if (!userDoc.exists()) {
+      await setDoc(ref, {
+        userId: user.uid,
+        username: form.username,
+        email: form.email,
+        userImg: "",
+        bio: "",
+      });
+      navigate("/");
+      console.log("User have been Signed in");
+      setModal(false);
+      setLoading(false);
+    }
+  };
+
+
   const style = {
     container: `size text-center`,
     h2: `text-3xl font-title`,
     subtitle: `max-w-[54ch] mx-auto py-[3rem]`,
     form: `flex flex-col gap-4`,
-    btn_continue: `flex grow w-[10rem] justify-center px-6 py-2 mt-4 mx-auto text-sm rounded-full bg-gray-900 hover:bg-gray-950 text-white`,
+    btn_continue: `flex grow w-[10rem] justify-center px-6 py-2 mt-4 mx-auto text-sm rounded-full 
+                  bg-gray-900 hover:bg-gray-950 text-white ${loading ? "opacity-50 pointer-events-none" : ""}`,
     btn_go_back: `mt-5 text-sm text-green-600 hover:text-green-700 flex items-center mx-auto`
   }
 
@@ -21,10 +77,12 @@ const SignUp = ({setSignReq}) => {
         Enter the email address associated with your account, and we’ll send a magic link to your inbox.
       </p>
 
-      <form className={style.form}>
-        <Input type="username" title="username"/>
-        <Input type="email" title="email"/>
-        <Input type="password" title="password"/>
+      <form onSubmit={handleSubmit}
+            className={style.form} >
+        <Input form={form} setForm={setForm} type="username" title="username"/>
+        <Input form={form} setForm={setForm} type="email" title="email"/>
+        <Input form={form} setForm={setForm} type="password" title="password"/>
+        <Input form={form} setForm={setForm} type="password" title="repeat password"/>
 
         <button className={style.btn_continue}>
           Continue

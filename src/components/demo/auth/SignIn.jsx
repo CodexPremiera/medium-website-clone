@@ -1,15 +1,47 @@
-import React from 'react';
+import React, { useState } from "react";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 import {MdKeyboardArrowLeft as GoBackArrow} from "react-icons/md";
 import Input from "../../utils/Input";
 
 const SignIn = ({setSignReq}) => {
+  const navigate = useNavigate();
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (form[("email", "password")] === "") {
+      console.log("All fields are required!!!");
+    }
+
+    try {
+      setLoading(true);
+      await signInWithEmailAndPassword(auth, form.email, form.password);
+      navigate("/");
+      console.log("User has been logged in ");
+      setLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    setLoading(false);
+  };
+
   const style = {
     container: `size text-center`,
     h2: `text-3xl font-title`,
     subtitle: `max-w-[54ch] mx-auto py-[3rem]`,
     form: `flex flex-col gap-4`,
-    btn_continue: `flex grow w-[10rem] justify-center px-6 py-2 mt-4 text-sm rounded-full bg-gray-900 hover:bg-gray-950 text-white mx-auto`,
+    btn_continue: `flex grow w-[10rem] justify-center px-6 py-2 mt-4 text-sm rounded-full 
+                    bg-gray-900 hover:bg-gray-950 text-white mx-auto ${loading ? "opacity-50 pointer-events-none" : ""}`,
     btn_go_back: `mt-5 text-sm text-green-600 hover:text-green-700 flex items-center mx-auto`
   }
 
@@ -20,9 +52,10 @@ const SignIn = ({setSignReq}) => {
         Enter the email address associated with your account, and we’ll send a magic link to your inbox.
       </p>
 
-      <form className={style.form}>
-        <Input type="email" title="email"/>
-        <Input type="password" title="password"/>
+      <form className={style.form}
+            onSubmit={handleSubmit} >
+        <Input form={form} setForm={setForm} type="email" title="email"/>
+        <Input form={form} setForm={setForm} type="password" title="password"/>
 
         <button className={style.btn_continue}>
           Continue
