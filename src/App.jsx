@@ -1,12 +1,12 @@
 import {Navigate, Route, Routes} from "react-router-dom";
-import Home from "./components/home/Home.jsx";
-import Demo from "./components/demo/Demo.jsx";
+import Home from "./components/home/Home";
+import Demo from "./components/demo/Demo";
 import HomeHeader from "./components/home/HomeHeader.jsx";
 import DemoHeader from "./components/demo/DemoHeader.jsx";
-import {Blog} from "./components/context/Context.jsx";
+import { Blog } from "./context/Context";
 
-function App() {
-  const currentUser = Blog();
+const App = () => {
+  const currentUser = false; // Blog();
   return (
     <>
       {currentUser ? <HomeHeader /> : <DemoHeader />}
@@ -23,4 +23,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

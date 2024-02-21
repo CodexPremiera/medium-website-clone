@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomeHeader = () => (
-  <div></div>
+  <div>HomeHeader</div>
 );
 
 export default HomeHeader;
