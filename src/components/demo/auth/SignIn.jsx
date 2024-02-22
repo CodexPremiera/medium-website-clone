@@ -5,7 +5,7 @@ import { auth } from "../../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
 import {MdKeyboardArrowLeft as GoBackArrow} from "react-icons/md";
-import Input from "../../utils/Input";
+import Input from "../../../utils/Input";
 
 const SignIn = ({setSignReq}) => {
   const navigate = useNavigate();
@@ -18,7 +18,9 @@ const SignIn = ({setSignReq}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (form[("email", "password")] === "") {
+    if (
+      form.email === "" || form.password === ""
+    ) {
       console.log("All fields are required!!!");
     }
 

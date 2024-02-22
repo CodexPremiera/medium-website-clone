@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
 import {MdKeyboardArrowLeft as GoBackArrow} from "react-icons/md";
-import Input from "../../utils/Input";
+import Input from "../../../utils/Input";
 
 
 const SignUp = ({ setSignReq, setModal }) => {
@@ -23,7 +23,12 @@ const SignUp = ({ setSignReq, setModal }) => {
     e.preventDefault();
 
     // Check if all fields are entered
-    if (form[("username", "email", "password", "rePassword")] === "") {
+    if (
+      form.username === "" ||
+      form.email === "" ||
+      form.password === "" ||
+      form.rePassword === ""
+    ) {
       console.log("All fields are required");
       return;
     }
@@ -82,7 +87,7 @@ const SignUp = ({ setSignReq, setModal }) => {
         <Input form={form} setForm={setForm} type="username" title="username"/>
         <Input form={form} setForm={setForm} type="email" title="email"/>
         <Input form={form} setForm={setForm} type="password" title="password"/>
-        <Input form={form} setForm={setForm} type="password" title="repeat password"/>
+        <Input form={form} setForm={setForm} type="password" title="rePassword"/>
 
         <button className={style.btn_continue}>
           Continue
