@@ -1,7 +1,7 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 import Home from "./components/home/Home";
 import Demo from "./components/demo/Demo";
-import HomeHeader from "./components/home/HomeHeader.jsx";
+import HomeHeader from "./components/home/header/HomeHeader";
 import DemoHeader from "./components/demo/DemoHeader.jsx";
 import { Blog } from "./context/Context";
 
