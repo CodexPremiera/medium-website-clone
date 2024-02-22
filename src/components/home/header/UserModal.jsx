@@ -57,7 +57,7 @@ const UserModal = () => {
 
       <div className={style.menu}>
         {modalMenuItems.map((link, i) => (
-          <Link to={}
+          <Link to={``}
                 className={style.menu_items}
                 key={i}
                 path={link.path} >

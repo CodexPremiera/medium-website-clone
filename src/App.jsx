@@ -6,7 +6,8 @@ import DemoHeader from "./components/demo/DemoHeader.jsx";
 import { Blog } from "./context/Context";
 
 const App = () => {
-  const currentUser = false; // Blog();
+  //const currentUser = Blog();
+  const currentUser = true;
   return (
     <>
       {currentUser ? <HomeHeader /> : <DemoHeader />}

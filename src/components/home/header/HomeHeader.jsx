@@ -16,7 +16,7 @@ const HomeHeader = () => {
   const [searchModal, setSearchModal] = useState(false);
 
   const style = {
-    left_container: `flex items-center gap-3`,
+    left_container: `flex items-center gap-5`,
     medium_logo: `text-5xl`,
 
     right_container: `flex items-center gap-3 sm:gap-7`,
@@ -45,6 +45,7 @@ const HomeHeader = () => {
               <MediumLogo />
             </span>
           </Link>
+
           <Search modal={searchModal} setModal={setSearchModal} />
         </div>
 
@@ -52,7 +53,7 @@ const HomeHeader = () => {
         <div className={style.right_container}>
           <span className={style.search}
                 onClick={() => setSearchModal(true)} >
-            <SearchIcon />
+              <SearchIcon />
           </span>
 
           <Link to="/write"
@@ -68,12 +69,10 @@ const HomeHeader = () => {
           </span>
 
           <div className={style.profile}>
-            <img
-              onClick={() => setModal(true)}
-              className={style.profile_pic}
-              src="/profile.jpg"
-              alt="profile-img"
-            />
+            <img className={style.profile_pic}
+                 onClick={() => setModal(true)}
+                 src="/profile.jpg"
+                 alt="profile-img" />
             <span className={style.profile_dropdown}>
               <ArrowDownIcon/>
             </span>

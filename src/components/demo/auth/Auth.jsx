@@ -69,7 +69,7 @@ const Auth = ({modal, setModal, createUser, setCreateUser}) => {
 
 
   return (
-    <Modal modal={modal} setModal={setModal} hidden={hidden}>
+    <Modal modal={modal} setModal={setModal} isBlurBg={true}>
       <div className={style.container}>
         <button
           onClick={() => setModal(false)}
