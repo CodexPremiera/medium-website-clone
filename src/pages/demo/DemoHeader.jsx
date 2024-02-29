@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { nav } from "../../data.js";
 import Logo from '../../assets/medium-logo.png'
 import { Link } from "react-router-dom";
-import Auth from "./auth/Auth.jsx";
+import AuthModal from "./authModal/AuthModal.jsx";
 
 const DemoHeader = () => {
   const [isActive, setIsActive] = useState(false);
@@ -22,12 +22,12 @@ const DemoHeader = () => {
 
   const style = {
     header_bar: `border-b border-black sticky top-0 z-50 ${isActive ? "bg-white" : "bg-banner"} transition-all duration-500`,
-    container: `size h-[70px] flex items-center justify-between`,
+    container: `standard_width h-[75px] flex grow-1 items-center justify-between font-texts`,
     logo: `h-[2.5rem]`,
     nav_menu: `flex items-center gap-5`,
-    nav_list: `hidden text-sm sm:flex items-center gap-5`,
+    nav_list: `hidden text-sm md:flex items-center gap-6`,
     btn_sign_in: `hidden text-sm sm:flex items-center gap-5`,
-    btn_get_started: `btn-black ${isActive ? "!bg-green-700" : "!bg-black"} transition-all duration-500`
+    btn_get_started: `${isActive ? "btn-green" : "btn-black"} transition-all duration-500`
   }
 
   return (
@@ -52,11 +52,11 @@ const DemoHeader = () => {
                     setModal(true);
                     setCreateUser(false);
                   }}
-                  aria-label={`Sign In`}>
+                  aria-label={`Sign in`}>
             Sign In
           </button>
 
-          <Auth modal={modal} setModal={setModal} createUser={createUser} setCreateUser={setCreateUser} />
+          <AuthModal modal={modal} setModal={setModal} createUser={createUser} setCreateUser={setCreateUser} />
 
           <button className={style.btn_get_started}
                   onClick={() => {
@@ -64,7 +64,7 @@ const DemoHeader = () => {
                     setCreateUser(true);
                   }}
                   aria-label={`Get Started`}>
-            Get Started
+            Get started
           </button>
         </nav>
 

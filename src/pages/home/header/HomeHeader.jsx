@@ -3,30 +3,32 @@ import React, { useState } from "react";
 import { BsMedium as MediumLogo } from "react-icons/bs";
 import { CiSearch as SearchIcon } from "react-icons/ci";
 import { LiaEditSolid as WriteIcon } from "react-icons/lia";
-import { IoMdNotificationsOutline as NotificationIcon } from "react-icons/io";
-import { MdKeyboardArrowDown as ArrowDownIcon } from "react-icons/md";
+import { PiBellLight as NotificationIcon } from "react-icons/pi";
 
 import { Link } from "react-router-dom";
-import Search from "./Search";
-import Modal from "../../../utils/Modal";
-import UserModal from "./UserModal";
+import Search from "./Search.jsx";
+import Modal from "../../../components/Modal.jsx";
+import UserModal from "./UserModal.jsx";
 
 const HomeHeader = () => {
   const [modal, setModal] = useState(false);
   const [searchModal, setSearchModal] = useState(false);
 
   const style = {
-    left_container: `flex items-center gap-5`,
-    medium_logo: `text-5xl`,
+    header: `border-b border-gray-200 w-full sticky top-0 z-50 bg-white`,
+    header_container: `mx-[1.5rem] h-[57px] flex grow-1 items-center justify-between font-texts`,
 
-    right_container: `flex items-center gap-3 sm:gap-7`,
-    search: `flex sm:hidden text-3xl text-gray-300 cursor-pointer`,
+    left_container: `flex items-center gap-4`,
+    medium_logo: `text-[2.8rem] aspect-auto fill-neutral-800`,
 
-    write: `hidden md:flex items-center gap-1 text-gray-500`,
-    write_icon: `text-3xl`,
-    write_text: `text-sm mt-2`,
+    right_container: `flex items-center gap-8`,
+    search: `flex sm:hidden text-3xl text-gray-500 cursor-pointer`,
 
-    notification: `text-3xl text-gray-500 cursor-pointer`,
+    write: `hidden md:flex items-center gap-1.5 text-gray-500`,
+    write_icon: `text-2xl text-gray-500`,
+    write_text: `text-sm my-auto`,
+
+    notification: `text-2xl text-gray-500 cursor-pointer`,
 
     profile: `flex items-center relative`,
     profile_pic: `w-[2.3rem] hr-[2.3rem] object-cover rounded-full cursor-pointer`,
@@ -35,14 +37,14 @@ const HomeHeader = () => {
   }
 
   return (
-    <header className="border-b border-gray-200">
-      <div className="size h-[60px] flex items-center justify-between">
+    <header className={style.header}>
+      <div className={style.header_container}>
 
         {/* left side  */}
         <div className={style.left_container}>
           <Link to={"/"}>
             <span className={style.medium_logo}>
-              <MediumLogo />
+              <MediumLogo className={`fill-neutral-800`}/>
             </span>
           </Link>
 
@@ -73,9 +75,6 @@ const HomeHeader = () => {
                  onClick={() => setModal(true)}
                  src="/profile.jpg"
                  alt="profile-img" />
-            <span className={style.profile_dropdown}>
-              <ArrowDownIcon/>
-            </span>
 
             <Modal modal={modal} setModal={setModal}>
               <div className={style.profile_modal}>

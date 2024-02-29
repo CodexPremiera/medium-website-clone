@@ -2,11 +2,10 @@ import React, {createContext, useContext, useEffect, useState} from 'react';
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase.js";
+import Loading from "../components/Loading.jsx";
 
-import Loading from "../components/loading/Loading";
 
-
-const BlogContext = createContext();
+const BlogContext = createContext(undefined);
 
 const Context = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(false);

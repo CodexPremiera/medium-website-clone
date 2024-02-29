@@ -5,7 +5,7 @@ import { FcGoogle as GoogleLogo } from "react-icons/fc";
 import { MdFacebook as FacebookLogo } from "react-icons/md";
 import { AiOutlineMail as EmailLogo } from "react-icons/ai";
 
-import Modal from "../../../utils/Modal.jsx";
+import Modal from "../../../components/Modal.jsx";
 import SignIn from "./SignIn.jsx";
 import SignUp from "./SignUp.jsx";
 
@@ -15,7 +15,7 @@ import { auth, database, provider } from "../../../firebase/firebase.js";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const Auth = ({modal, setModal, createUser, setCreateUser}) => {
+const AuthModal = ({modal, setModal, createUser, setCreateUser}) => {
   const [signReq, setSignReq] = useState("");
   const hidden = modal ? "visible opacity-100" : "invisible opacity-0";
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const Auth = ({modal, setModal, createUser, setCreateUser}) => {
 
 
   const style = {
-    container: `z-50 fixed overflow-auto bg-white py-[4rem] px-[3rem] sm:rounded-xl shadows 
+    container: `z-50 fixed overflow-auto bg-white py-[4rem] px-[3rem] sm:rounded-sm shadows 
                 w-full h-full md:w-[640px] md:h-fit top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] 
                 ${hidden} transition-all duration-500`,
     btn_exit: `absolute top-[2rem] right-[2rem] text-2xl hover:opacity-50`,
@@ -126,7 +126,7 @@ const Auth = ({modal, setModal, createUser, setCreateUser}) => {
   );
 };
 
-export default Auth;
+export default AuthModal;
 
 const Button = ({icon, text, click}) => {
   return (

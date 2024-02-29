@@ -1,9 +1,11 @@
 import React from "react";
 
 const Input = ({ type, title, form, setForm }) => {
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleChange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
   };
+
   return (
     <div className="flex flex-col gap- max-w-[64ch]">
       <input

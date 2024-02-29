@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ children, modal, setModal, isBlurBg = false}) => {
+const Modal = ({ children, modal, setModal, isBlurBg = false }) => {
   return (
     <>
       <div onClick={() => setModal(false)}
@@ -12,6 +12,4 @@ const Modal = ({ children, modal, setModal, isBlurBg = false}) => {
   );
 };
 
-
 export default Modal;
-

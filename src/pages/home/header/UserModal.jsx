@@ -6,9 +6,9 @@ import { BiSpreadsheet as StoriesIcon } from "react-icons/bi";
 import { HiOutlineChartBar as StatsIcon } from "react-icons/hi";
 import { LiaEditSolid as WriteIcon } from "react-icons/lia";
 
-import { Blog } from "../../../context/Context";
+import { Blog } from "../../../context/Context.jsx";
 import { Link } from "react-router-dom";
-import { secretEmail } from "../../../utils/helper";
+import { secretEmail } from "../../../utils/secretEmail.js";
 
 
 const UserModal = () => {

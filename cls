@@ -12,11 +12,11 @@ warning: in the working copy of 'src/index.css', LF will be replaced by CRLF the
    }[m
  [m
    return ([m
-[1mdiff --git a/src/components/demo/auth/Auth.jsx b/src/components/demo/auth/Auth.jsx[m
+[1mdiff --git a/src/components/demo/auth/AuthModal.jsx b/src/components/demo/auth/AuthModal.jsx[m
 [1mindex a354c58..f37bace 100644[m
-[1m--- a/src/components/demo/auth/Auth.jsx[m
-[1m+++ b/src/components/demo/auth/Auth.jsx[m
-[36m@@ -17,9 +17,9 @@[m [mconst Auth = ({modal, setModal}) => {[m
+[1m--- a/src/components/demo/auth/AuthModal.jsx[m
+[1m+++ b/src/components/demo/auth/AuthModal.jsx[m
+[36m@@ -17,9 +17,9 @@[m [mconst AuthModal = ({modal, setModal}) => {[m
    const hidden = modal ? "visible opacity-100" : "invisible opacity-0";[m
  [m
    const style = {[m
@@ -29,7 +29,7 @@ warning: in the working copy of 'src/index.css', LF will be replaced by CRLF the
      btn_exit: `absolute top-[2rem] right-[2rem] text-2xl hover:opacity-50`,[m
      content: `flex flex-col justify-center items-center gap-[3rem]`,[m
      h2: `text-2xl font-title`,[m
-[36m@@ -31,10 +31,7 @@[m [mconst Auth = ({modal, setModal}) => {[m
+[36m@@ -31,10 +31,7 @@[m [mconst AuthModal = ({modal, setModal}) => {[m
  [m
    return ([m
      <Modal modal={modal} setModal={setModal} hidden={hidden}>[m
