@@ -7,7 +7,7 @@ function PostCard( {post} ) {
   //const post = samplePosts[0];
 
   const style = {
-    container: `flex flex-col font-texts max-w-[680px] mx-6 py-4 border-b border-gray-100`,
+    container: `flex flex-col font-texts max-w-[680px] pt-2 pb-6 mx-6 border-b border-gray-100`,
 
     author: `flex align-center`,
     author_photo: `w-[24px] aspect-auto object-cover rounded-full cursor-pointer`,

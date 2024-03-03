@@ -4,7 +4,7 @@ import {discover} from "../data/data.js";
 
 function Discover() {
   const style = {
-    container: `sticky top-[7rem] w-[320px] ml-4 xl:ml-8 mr-4 `,
+    container: `w-[320px] ml-4 xl:ml-8 mr-4 `,
 
     discoverHalf: `border-b border-gray-300 pb-6 px-2`,
     heading: `font-semibold`,

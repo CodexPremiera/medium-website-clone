@@ -22,7 +22,7 @@ const DemoHeader = () => {
 
   const style = {
     header_bar: `border-b border-black sticky top-0 z-50 ${isActive ? "bg-white" : "bg-banner"} transition-all duration-500`,
-    container: `standard_width h-[75px] flex grow-1 items-center justify-between font-texts`,
+    container: `w-standard h-[75px] flex grow-1 items-center justify-between font-texts`,
     logo: `h-[2.5rem]`,
     nav_menu: `flex items-center gap-5`,
     nav_list: `hidden text-sm md:flex items-center gap-6`,
