@@ -5,13 +5,13 @@ import { FcGoogle as GoogleLogo } from "react-icons/fc";
 import { MdFacebook as FacebookLogo } from "react-icons/md";
 import { AiOutlineMail as EmailLogo } from "react-icons/ai";
 
-import Modal from "../../../components/Modal.jsx";
+import Modal from "../../../../components/Modal.jsx";
 import SignIn from "./SignIn.jsx";
 import SignUp from "./SignUp.jsx";
 
 import { signInWithPopup } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { auth, database, provider } from "../../../firebase/firebase.js";
+import { auth, database, provider } from "../../../../firebase/firebase.js";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 

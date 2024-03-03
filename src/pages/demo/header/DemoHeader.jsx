@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { nav } from "../../data/data.js";
-import Logo from '../../assets/medium-logo.png'
+import { nav } from "../../../data/data.js";
+import Logo from '../../../assets/medium-logo.png'
 import { Link } from "react-router-dom";
 import AuthModal from "./authModal/AuthModal.jsx";
 

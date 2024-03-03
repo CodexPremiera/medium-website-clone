@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../firebase/firebase.js";
+import { auth } from "../../../../firebase/firebase.js";
 import { useNavigate } from "react-router-dom";
 
 import {MdKeyboardArrowLeft as GoBackArrow} from "react-icons/md";
-import Input from "../../../components/Input.jsx";
+import Input from "../../../../components/Input.jsx";
 
 const SignIn = ({setSignReq}) => {
   const navigate = useNavigate();

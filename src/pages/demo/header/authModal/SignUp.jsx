@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, database } from "../../../firebase/firebase.js";
+import { auth, database } from "../../../../firebase/firebase.js";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
 import {MdKeyboardArrowLeft as GoBackArrow} from "react-icons/md";
-import Input from "../../../components/Input.jsx";
+import Input from "../../../../components/Input.jsx";
 
 
 const SignUp = ({ setSignReq, setModal }) => {
