@@ -5,8 +5,9 @@ import {samplePosts} from "../data/samplePosts.js";
 function PostFeed() {
   return (
     <div className={`flex flex-col gap-8`}>
-      <PostCard post={samplePosts[0]} />
-      <PostCard post={samplePosts[1]} />
+      {samplePosts.map(post => (
+        <PostCard post={post} />
+      ))}
     </div>
   );
 }

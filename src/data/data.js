@@ -15,14 +15,16 @@ export const nav = [
 
 export const discover = [
   "Technology",
-  "Study",
   "Programming",
-  "Sport",
-  "Knowledge",
-  "Self Improvement",
-  "Relationships",
+  "Database",
+  "Computer Science",
+  "Web Development",
+  "JavaScript",
+  "React",
   "Machine Learning",
-  "Politics",
+  "Python",
+  "Artificial Intelligence",
+  "Big Data"
 ];
 
 export const discoverActions = [

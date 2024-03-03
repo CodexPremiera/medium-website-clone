@@ -15,7 +15,7 @@ const HomeHeader = () => {
   const [searchModal, setSearchModal] = useState(false);
 
   const style = {
-    header: `border-b border-gray-200 w-full sticky top-0 z-50 bg-white`,
+    header: `border-b border-neutral-100 w-full sticky top-0 z-50 bg-white`,
     header_container: `mx-[1.5rem] h-[57px] flex grow-1 items-center justify-between font-texts`,
 
     left_container: `flex items-center gap-4`,

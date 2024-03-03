@@ -9,7 +9,8 @@ export default {
       colors: {
         black1: "rgba(0, 0, 0, 0.8)",
         banner: "rgb(255, 192, 23)",
-        Gray: "#6B6B6B"
+        Gray: "#6B6B6B",
+        green_custom: "#1a8917",
       },
       fontFamily: {
         title: `gt-super, Georgia, Cambria,Times New Roman, Times, serif;`,

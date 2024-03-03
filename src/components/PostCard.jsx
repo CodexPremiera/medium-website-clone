@@ -7,7 +7,7 @@ function PostCard( {post} ) {
   //const post = samplePosts[0];
 
   const style = {
-    container: `flex flex-col font-texts max-w-[680px] mx-6 py-4`,
+    container: `flex flex-col font-texts max-w-[680px] mx-6 py-4 border-b border-gray-100`,
 
     author: `flex align-center`,
     author_photo: `w-[24px] aspect-auto object-cover rounded-full cursor-pointer`,
@@ -18,12 +18,12 @@ function PostCard( {post} ) {
 
     article: `flex flex-col grow-1` ,
     article_title: `text-base sm:text-xl font-bold mb-2 line-clamp-2 max-h-[72px] cursor-pointer`,
-    article_desc: `hidden sm:block font-title text-neutral-600 line-clamp-3 max-h-[48px] cursor-pointer`,
+    article_desc: `hidden sm:block font-title text-neutral-600 line-clamp-3 max-h-[72px] cursor-pointer`,
 
-    actions: `flex max-lg:max-w-full max-w-actions mt-2 sm:mt-6 justify-between align-center`,
+    actions: `flex max-lg:max-w-full max-w-actions mt-2 sm:mt-5 justify-between align-center`,
     action_readTime: `text-sm text-neutral-600 my-2 hover:cursor-pointer`,
     action_icon_row: `flex hover:cursor-pointer`,
-    action_icon: `h-[24px] w-[24px] m-2 text-neutral-600`,
+    action_icon: `h-[24px] w-[24px] m-2 text-neutral-500`,
 
     media: `flex items-center min-w-fit max-w-fit h-fit`,
     media_image: `h-[56px] aspect-[10/7] sm:h-[112px] sm:aspect-[1] object-cover`
