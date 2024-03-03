@@ -31,7 +31,7 @@ const HomeHeader = () => {
     notification: `text-2xl text-gray-500 cursor-pointer`,
 
     profile: `flex items-center relative`,
-    profile_pic: `w-[2.3rem] hr-[2.3rem] object-cover rounded-full cursor-pointer`,
+    profile_pic: `w-[2.3rem] h-[2.3rem] object-cover rounded-full cursor-pointer`,
     profile_dropdown: `text-gray-500 cursor-pointer`,
     profile_modal: `${modal ? "visible opacity-100%" : "invisible opacity-0"} transition-all duration-100`,
   }

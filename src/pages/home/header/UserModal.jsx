@@ -8,7 +8,7 @@ import { LiaEditSolid as WriteIcon } from "react-icons/lia";
 
 import { Blog } from "../../../context/Context.jsx";
 import { Link } from "react-router-dom";
-import { secretEmail } from "../../../utils/secretEmail.js";
+//import { secretEmail } from "../../../utils/secretEmail.js";
 
 
 const UserModal = () => {
@@ -50,7 +50,7 @@ const UserModal = () => {
       <Link to="/write"
             className={style.write}>
         <span className="text-3xl">
-          <WriteIcon />
+          <WriteIcon/>
         </span>
         <span className="text-sm mt-2">Write</span>
       </Link>
@@ -60,7 +60,7 @@ const UserModal = () => {
           <Link to={``}
                 className={style.menu_items}
                 key={i}
-                path={link.path} >
+                path={link.path}>
             <span className="text-2xl">{link.icon}</span>
             <h2 className="text-md">{link.title}</h2>
           </Link>
@@ -70,7 +70,8 @@ const UserModal = () => {
       <button className={style.sign_out}>
         Sign Out
         <span className="text-sm">
-          {secretEmail(currentUser?.email)}
+          {/*{secretEmail(currentUser?.email)}*/}
+          {currentUser?.email}
         </span>
       </button>
     </section>

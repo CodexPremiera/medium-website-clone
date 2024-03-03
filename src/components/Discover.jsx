@@ -1,12 +1,12 @@
 import React from 'react';
-import {discover, discoverActions} from "../../data.js";
+import {discover} from "../data/data.js";
 
 
 function Discover() {
   const style = {
-    container: `sticky top-[7rem]`,
+    container: `sticky top-[7rem] w-[320px] ml-4 xl:ml-8 mr-4 `,
 
-    discoverHalf: `border-b border-gray-300 pb-6`,
+    discoverHalf: `border-b border-gray-300 pb-6 px-2`,
     heading: `font-semibold`,
     list_topics: `my-4 flex items-center gap-3 flex-wrap`,
     chip_topics: `bg-gray-200 py-2 px-4 text-sm rounded-full text-sm`,

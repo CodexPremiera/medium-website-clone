@@ -1,13 +1,13 @@
 import React from 'react'
 import HomeHeader from "./header/HomeHeader.jsx";
-import Posts from "../../components/Posts.jsx";
-import Discover from "../demo/Discover.jsx";
+import PostFeed from "../../components/PostFeed.jsx";
+import Discover from "../../components/Discover.jsx";
 
 const Home = () => {
   const style = {
-    container: `standard_width pb-7 flex flex-col-reverse md:flex-row gap-y-[2rem]`,
-    post: `flex-1 pr-12 py-12`,
-    discover: `max-lg:hidden lg:flex-1 relative border-l border-gray-300 pl-10 py-12 max-w-[360px]`
+    container: `flex flex-row max-w-[1336px] justify-evenly mx-auto`,
+    post: `flex-1 max-w-[728px] min-h-[1080px] py-12`,
+    discover: `hidden lg:flex flex-1 max-w-fit max-h-[90vh] py-12 sticky top-[57px] relative border-l border-gray-300`
   }
 
   return (
@@ -15,7 +15,7 @@ const Home = () => {
       <HomeHeader/>
       <div className={style.container}>
         < div className={style.post}>
-          <Posts/>
+          <PostFeed/>
         </div>
         <div className={style.discover}>
           <Discover/>
