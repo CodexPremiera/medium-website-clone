@@ -6,12 +6,12 @@ import { BiSpreadsheet as StoriesIcon } from "react-icons/bi";
 import { HiOutlineChartBar as StatsIcon } from "react-icons/hi";
 import { LiaEditSolid as WriteIcon } from "react-icons/lia";
 
-import { Blog } from "../../../context/Context.jsx";
+import { Blog } from "../../context/Context.jsx";
 import { Link } from "react-router-dom";
-//import { secretEmail } from "../../../utils/secretEmail.js";
+import { secretEmail } from "../../utils/secretEmail.js";
 
 
-const UserModal = () => {
+const UserModal = (setModal) => {
   const { currentUser } = Blog();
 
   const modalMenuItems = [
@@ -57,10 +57,10 @@ const UserModal = () => {
 
       <div className={style.menu}>
         {modalMenuItems.map((link, i) => (
-          <Link to={``}
+          <Link to={link.path}
                 className={style.menu_items}
-                key={i}
-                path={link.path}>
+                onClick={() => setModal(false)}
+                key={i}>
             <span className="text-2xl">{link.icon}</span>
             <h2 className="text-md">{link.title}</h2>
           </Link>
@@ -70,8 +70,8 @@ const UserModal = () => {
       <button className={style.sign_out}>
         Sign Out
         <span className="text-sm">
-          {/*{secretEmail(currentUser?.email)}*/}
-          {currentUser?.email}
+          {secretEmail(currentUser?.email)}
+          {/*{currentUser?.email}*/}
         </span>
       </button>
     </section>

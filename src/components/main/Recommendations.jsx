@@ -1,8 +1,8 @@
 import React from 'react';
-import {discover} from "../data/data.js";
+import {discover} from "../../data/data.js";
 
 
-function Discover() {
+function Recommendations() {
   const style = {
     container: `w-[320px] ml-4 xl:ml-8 mr-4 `,
 
@@ -37,4 +37,4 @@ function Discover() {
   );
 }
 
-export default Discover;
+export default Recommendations;

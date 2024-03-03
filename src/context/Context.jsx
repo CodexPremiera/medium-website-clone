@@ -8,7 +8,7 @@ import Loading from "../components/Loading.jsx";
 const BlogContext = createContext(undefined);
 
 const Context = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

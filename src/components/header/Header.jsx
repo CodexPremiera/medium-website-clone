@@ -6,16 +6,16 @@ import { LiaEditSolid as WriteIcon } from "react-icons/lia";
 import { PiBellLight as NotificationIcon } from "react-icons/pi";
 
 import { Link } from "react-router-dom";
-import Search from "./Search.jsx";
-import Modal from "../../../components/Modal.jsx";
+import Modal from "../Modal.jsx";
 import UserModal from "./UserModal.jsx";
+import Search from "./Search.jsx";
 
-const HomeHeader = () => {
+const Header = () => {
   const [modal, setModal] = useState(false);
   const [searchModal, setSearchModal] = useState(false);
 
   const style = {
-    header: `border-b border-neutral-100 w-full sticky top-0 z-50 bg-white`,
+    header: `border-b border-neutral-200 w-full sticky top-0 z-50 bg-white`,
     header_container: `mx-[1.5rem] h-[57px] flex grow-1 items-center justify-between font-texts`,
 
     left_container: `flex items-center gap-4`,
@@ -78,7 +78,7 @@ const HomeHeader = () => {
 
             <Modal modal={modal} setModal={setModal}>
               <div className={style.profile_modal}>
-                <UserModal/>
+                <UserModal setModal={setModal}/>
               </div>
             </Modal>
           </div>
@@ -89,4 +89,4 @@ const HomeHeader = () => {
   );
 };
 
-export default HomeHeader;
+export default Header;

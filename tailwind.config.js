@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        black1: "rgba(0, 0, 0, 0.8)",
+        black_main: "#242424",
+        gray_text: "#6B6B6B",
         banner: "rgb(255, 192, 23)",
-        Gray: "#6B6B6B",
-        green_custom: "#1a8917",
+        green_custom: "rgb(26, 137, 23)",
+        green_hover: "#156D12"
       },
       fontFamily: {
         title: `gt-super, Georgia, Cambria,Times New Roman, Times, serif;`,

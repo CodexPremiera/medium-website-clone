@@ -1,12 +1,12 @@
 import React from 'react'
-import HomeHeader from "./header/HomeHeader.jsx";
-import Content from "../../components/Content.jsx";
+import Header from "../../components/header/Header.jsx";
+import Content from "../../components/main/Content.jsx";
 
 const Home = () => {
 
   return (
     <>
-      <HomeHeader />
+      <Header />
       <main>
         <Content />
       </main>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { CiSearch as SearchIcon } from "react-icons/ci";
-import Modal from "../../../components/Modal.jsx";
+import Modal from "../Modal.jsx";
 
 
 const Search = ({ modal, setModal }) => {
