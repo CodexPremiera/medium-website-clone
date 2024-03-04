@@ -8,7 +8,7 @@ import { LiaEditSolid as WriteIcon } from "react-icons/lia";
 
 import { Blog } from "../../context/Context.jsx";
 import { Link } from "react-router-dom";
-import { secretEmail } from "../../utils/secretEmail.js";
+//import { secretEmail } from "../../utils/secretEmail.js";
 
 
 const UserModal = (setModal) => {
@@ -70,8 +70,8 @@ const UserModal = (setModal) => {
       <button className={style.sign_out}>
         Sign Out
         <span className="text-sm">
-          {secretEmail(currentUser?.email)}
-          {/*{currentUser?.email}*/}
+          {/*{secretEmail(currentUser?.email)}*/}
+          {currentUser?.email}
         </span>
       </button>
     </section>

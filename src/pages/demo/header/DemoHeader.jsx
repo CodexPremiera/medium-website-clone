@@ -6,8 +6,9 @@ import AuthModal from "./authModal/AuthModal.jsx";
 
 const DemoHeader = () => {
   const [isActive, setIsActive] = useState(false);
-  const [createUser, setCreateUser] = useState(false);
   const [modal, setModal] = useState(false);
+  const [createUser, setCreateUser] = useState(false);
+  const [signReq, setSignReq] = useState("");
 
   /**
    * Listen to scrolling and activate when scrolled down enough. Apply color changes to `header wrapper`
@@ -51,17 +52,21 @@ const DemoHeader = () => {
                   onClick={() => {
                     setModal(true);
                     setCreateUser(false);
+                    setSignReq("");
                   }}
                   aria-label={`Sign in`}>
             Sign In
           </button>
 
-          <AuthModal modal={modal} setModal={setModal} createUser={createUser} setCreateUser={setCreateUser} />
+          <AuthModal modal={modal} setModal={setModal}
+                     createUser={createUser} setCreateUser={setCreateUser}
+                     signReq={signReq} setSignReq={setSignReq} />
 
           <button className={style.btn_get_started}
                   onClick={() => {
                     setModal(true);
                     setCreateUser(true);
+                    setSignReq("");
                   }}
                   aria-label={`Get Started`}>
             Get started

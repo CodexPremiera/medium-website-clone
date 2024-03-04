@@ -6,7 +6,7 @@ import { Blog } from "./context/Context";
 
 const App = () => {
   const currentUser = Blog();
-  //const currentUser = true;
+  //const currentUser = false;
 
   const homePath = '/';
   const demoPath = '/Demo';

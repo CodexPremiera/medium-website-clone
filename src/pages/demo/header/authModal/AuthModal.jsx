@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import { LiaTimesSolid as ExitIcon } from "react-icons/lia";
 import { FcGoogle as GoogleLogo } from "react-icons/fc";
@@ -15,8 +15,7 @@ import { auth, database, provider } from "../../../../firebase/firebase.js";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const AuthModal = ({modal, setModal, createUser, setCreateUser}) => {
-  const [signReq, setSignReq] = useState("");
+const AuthModal = ({modal, setModal, createUser, setCreateUser, signReq, setSignReq}) => {
   const hidden = modal ? "visible opacity-100" : "invisible opacity-0";
   const navigate = useNavigate();
 
@@ -68,11 +67,14 @@ const AuthModal = ({modal, setModal, createUser, setCreateUser}) => {
   };
 
 
+
   return (
     <Modal modal={modal} setModal={setModal} isBlurBg={true}>
       <div className={style.container}>
         <button
-          onClick={() => setModal(false)}
+          onClick={() => {
+            setModal(false);
+          }}
           className={style.btn_exit}>
           <ExitIcon />
         </button>

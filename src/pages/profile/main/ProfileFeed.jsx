@@ -13,9 +13,9 @@ import ProfilePic from "../../../assets/profile.jpg";
 //import profile from "../Profile.jsx";
 
 function ProfileFeed() {
-  const { allUsers } = Blog();
+  // const { allUsers } = Blog();
   const { userId } = useParams();
-  //const getUserData = allUsers.find((user) => user.id === userId);
+  // const getUserData = allUsers.find((user) => user.id === userId);
 
   const activities = [
     {
@@ -33,7 +33,7 @@ function ProfileFeed() {
   ];
 
   const [currentActive, setCurrentActive] = useState(activities[0]);
-  const [modal, setModal] = useState(false);
+  // const [modal, setModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const isLaptop = !useWindowResize(1024);
   const isTablet = !useWindowResize(768);
@@ -43,7 +43,7 @@ function ProfileFeed() {
     profile_info: `flex`,
     profile_photo: `w-[48px] aspect-auto object-cover rounded-full mr-5 cursor-pointer`,
     profile_user:  `flex flex-col`,
-    profile_name: `text-2xl md:text-4xl lg:text-[42px] font-semibold capitalize tracking-[-0.01em]`,
+    profile_name: `text-2xl sm:text-2xl md:text-4xl lg:text-[42px] font-semibold capitalize tracking-[-0.01em]`,
     follower_count: `text-gray_text text-sm leading-5 mt-1`,
 
     call_to_action: `flex items-center`,
