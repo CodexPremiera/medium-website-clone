@@ -1,5 +1,5 @@
 import React from 'react';
-import PostFeed from "../../../../components/main/PostFeed.jsx";
+import PostFeed from "../../../../components/main/content/PostFeed.jsx";
 
 function ProfileHome() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import PostCard from "./PostCard.jsx";
-import {samplePosts} from "../../data/samplePosts.js";
+import {samplePosts} from "../../../data/samplePosts.js";
 
 function PostFeed() {
   return (

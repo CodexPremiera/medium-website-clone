@@ -13,7 +13,7 @@ export const nav = [
   },
 ];
 
-export const discover = [
+export const recommendations = [
   "Technology",
   "Programming",
   "Database",
@@ -27,7 +27,7 @@ export const discover = [
   "Big Data"
 ];
 
-export const discoverActions = [
+export const footerLinks = [
   "Help",
   "Status",
   "Writers",

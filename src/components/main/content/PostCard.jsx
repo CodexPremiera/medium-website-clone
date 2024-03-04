@@ -3,7 +3,7 @@ import { MdOutlineBookmarkAdd as SaveIcon } from "react-icons/md";
 import { IoIosRemoveCircleOutline as RemoveIcon } from "react-icons/io";
 import { IoIosMore as MoreIcon } from "react-icons/io";
 
-import ProfilePic from '../../assets/profile.jpg'
+import ProfilePic from '../../../assets/profile.jpg'
 
 function PostCard( {post} ) {
   //const post = samplePosts[0];

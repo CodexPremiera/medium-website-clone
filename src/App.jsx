@@ -2,11 +2,11 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import Home from "./pages/home/Home";
 import Demo from "./pages/demo/Demo";
 import Profile from "./pages/profile/Profile.jsx";
-import { Blog } from "./context/Context";
+// import { Blog } from "./context/Context";
 
 const App = () => {
-  const currentUser = Blog();
-  //const currentUser = false;
+  //const currentUser = Blog();
+  const currentUser = true;
 
   const homePath = '/';
   const demoPath = '/Demo';
